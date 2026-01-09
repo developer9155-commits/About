@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#cce7ff, #ffffff);
+      text-align: center;
+    }
+
+    /* OPEN PAGE */
+.open-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.drop-box {
+  margin-top: -300px;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  animation: dropDown 1.5s ease forwards;
+}
+
+@keyframes dropDown {
+  0% { margin-top: -300px; opacity: 0; }
+  100% { margin-top: 200px; opacity: 1; }
+}
+
+.open-btn {
+  padding: 15px 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 30px;
+  background: #4aa3df;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.open-btn:hover {
+  background: #2c5aa0;
+  transform: scale(1.05);
+}
+
+/* PORTFOLIO PAGE */
+    #portfolio {
+      display: none;
+    }
+
+    header {
+      background: #4aa3df;
+      color: white;
+      padding: 20px;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      width: 80%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Cartoon Character */
+    .character {
+      width: 150px;
+      height: 150px;
+      background: #5dade2;
+      border-radius: 50%;
+      margin: 30px auto;
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .eye {
+      width: 15px;
+      height: 15px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 50px;
+    }
+
+    .eye.left { left: 45px; }
+    .eye.right { right: 45px; }
+
+    .mouth {
+      width: 40px;
+      height: 20px;
+      border-bottom: 4px solid black;
+      border-radius: 0 0 40px 40px;
+      position: absolute;
+      bottom: 40px;
+      left: 55px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    footer {
+      background: #4aa3df;
+      color: white;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- OPEN SCREEN -->
+<div class="open-screen" id="openScreen">
+  <div class="drop-box">
+    <h1>About Developer</h1>
+    <button class="open-btn" onclick="openPortfolio()">Know About Me</button>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<div id="portfolio">
+  <header>
+    <h1>👨‍💻 Murari Kumar Portfolio</h1>
+  </header>
+
+  <div class="character">
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="mouth"></div>
+  </div>
+
+  <section>
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I am an engineer who loves learning and building simple solutions.</p>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <p>C, C++, Python, HTML, CSS, JavaScript, SQL</p>
+    </div>
+
+    <div class="card">
+      <h2>Projects</h2>
+      <p>Matrix Computation System<br>Student Database System<br>Portfolio Website</p>
+    </div>
+
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Email: murarikumarstm102@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Murari Kumar Portfolio</p>
+  </footer>
+</div>
+
+<script>
+  function openPortfolio() {
+    document.getElementById("openScreen").style.display = "none";
+    document.getElementById("portfolio").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
